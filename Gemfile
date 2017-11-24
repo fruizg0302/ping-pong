@@ -14,6 +14,7 @@ gem 'web-console', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'faker'
   gem 'byebug'
   gem 'spring'
   gem "factory_bot_rails", "~> 4.0"
