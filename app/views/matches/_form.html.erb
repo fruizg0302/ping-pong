@@ -1,0 +1,38 @@
+<%= form_for(@match) do |f| %>
+  <% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
+
+      <ul>
+      <% @match.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3>Hey how you doin' <%= "#{User.find_email(current_user.id)}" %>?</h3>
+
+  <br>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.label :date_played %><br>
+    <%= f.date_select :date_played %>
+  </div>
+  <div class="field">
+    <%= f.label "Opponent" %><br>
+    <%= f.collection_select :opponent_id, User.find_opponents(current_user.id), :id, :email %>
+  </div>
+  <div class="field">
+    <%= f.label :oppent_score %><br>
+    <%= f.number_field :oppent_score %>
+  </div>
+  <div class="field">
+    <%= f.label :own_score %><br>
+    <%= f.number_field :own_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
