@@ -19,7 +19,7 @@
       <tr>
         <td><%= match.user_id %></td>
         <td><%= match.date_played %></td>
-        <td><%= User.find(match.opponent_id).email %></td>
+        <td><%= User.find_email(match.opponent_id) %></td>
         <td><%= match.oppent_score %></td>
         <td><%= match.own_score %></td>
         <td><%= link_to 'Show', match %></td>

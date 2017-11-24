@@ -1,5 +1,26 @@
 <h1 class='page-header'>Leaderboard</h1>
+<h1>Listing Leaderboard</h1>
 
-<div class="alert alert-warning" role="alert">This is a sample page.</div>
+<table>
+  <thead>
+    <tr>
+      <th>User Rank</th>
+      <th>User email</th>
+      <th>User Score</th>
+      <th>Games Played</th>
+    </tr>
+  </thead>
 
-<%= image_tag('leaderboard.png') %>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.rank %></td>
+		<td><%= user.email %></td>
+		<td><%= user.score %></td>
+		<td><%= user.games_played %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
