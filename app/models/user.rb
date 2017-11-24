@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   end
 
   def self.update_rank_counter(match)
-    require 'byebug'
     user = find_user(match.user_id)
     user.rank = 1 if user.rank.nil?
 
