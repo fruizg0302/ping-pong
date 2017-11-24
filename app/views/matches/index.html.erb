@@ -22,9 +22,6 @@
         <td><%= User.find_email(match.opponent_id) %></td>
         <td><%= match.oppent_score %></td>
         <td><%= match.own_score %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

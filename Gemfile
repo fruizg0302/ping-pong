@@ -10,9 +10,11 @@ gem 'turbolinks',   '~> 2.5.3'
 gem 'devise',       '~> 3.5.2'
 gem 'devise-bootstrap-views', '~> 0.0.6'
 
+gem 'web-console', group: :development
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "factory_bot_rails", "~> 4.0"
 end
